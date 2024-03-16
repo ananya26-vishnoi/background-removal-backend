@@ -10,8 +10,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-BITLY_ACCESS_TOKEN = '2e5e5bb79324c5410a16b19df7b34dc97a8c6c04'  # Replace with your Bitly access token
-
 @api_view(['POST'])
 def upload_and_remove_background(request):
         try:
