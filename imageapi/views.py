@@ -8,6 +8,7 @@ BITLY_ACCESS_TOKEN = '2e5e5bb79324c5410a16b19df7b34dc97a8c6c04'  # Replace with 
 
 @api_view(['POST'])
 def upload_and_remove_background(request):
+        try:
             uploaded_image = request.data['image']
             print(uploaded_image)
             
@@ -47,3 +48,6 @@ def upload_and_remove_background(request):
                 result = {'success': False, 'error': 'Failed to remove background.'}
 
             return JsonResponse(result)
+
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
